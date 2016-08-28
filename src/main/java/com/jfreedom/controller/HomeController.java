@@ -2,7 +2,9 @@ package com.jfreedom.controller;
 
 import java.util.List;
 
+import com.jfreedom.reponsitory.ShopJPAReponsitoryCustom;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -19,6 +21,7 @@ public class HomeController {
 	
 	@Autowired
 	ShopService shopService;
+
 	
 	@RequestMapping(value="/home", method=RequestMethod.GET)
 	public String homeHello(@RequestParam("shopname") String name, ModelMap model){
@@ -38,5 +41,14 @@ public class HomeController {
 		}
 		model.addAttribute("allOfShop",listShops);
 		return "listShopView";
+	}
+	@RequestMapping(value = "/findID",method = RequestMethod.GET)
+	public String findOne(Model model){
+		Shop shop = new Shop();
+
+
+		 shop = shopService.findOneId();
+		model.addAttribute("shop",shop);
+		return "findOne";
 	}
 }
