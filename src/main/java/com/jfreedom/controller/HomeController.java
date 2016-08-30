@@ -57,4 +57,32 @@ public class HomeController {
 		return "insertShop";
 	}
 	
+	@RequestMapping(value = "/findID",method = RequestMethod.GET)
+	public String findOne(Model model){
+		Shop shop = new Shop();
+
+
+		 shop = shopService.findOneId();
+		model.addAttribute("shop",shop);
+		return "findOne";
+	}
+	/*@RequestMapping(value = "/searchByName")
+	public String searchName(HttpServletRequest httpRequest,HttpSession session){
+
+
+		String name = httpRequest.getParameter("name");
+		if(name == null){
+			httpRequest.setAttribute("l?i tìm ki?m", "?i?n tên mu?n tìm");
+		}else {
+
+
+			List<Shop> shopListsearch = shopService.searchName(name);
+			session.setAttribute("searchName",shopListsearch);
+
+
+
+
+		}
+		return "searchname";
+	}*/
 }

@@ -12,4 +12,8 @@ public interface ShopJPAReponsitoryCustom extends JpaRepository<Shop, Integer>{
 
 	//public Shop findShop();
 	
+    /*List<Shop> searchName(@Param("name") String name);*/
+
+
+
 }

@@ -6,8 +6,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>List Shop View</title>
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<title>List Shop View By Array</title>
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <!-- <link href="/css/bootstrap.min.css" rel="stylesheet"> -->
 <style>
 .error {
@@ -15,21 +16,17 @@
 	font-weight: bold;
 }
 
-#listShopView tr:first-child {
+#listShopViewByArray tr:first-child {
 	font-weight: bold;
 }
 </style>
 
 </head>
 <body>
-<form method="get" action="/searchByName">
-	<input type="text" required="" name="name">
-	<input type="submit" value="Tìm">
-</form>
 	<div class="container">
 		<table class="table table-hover " width="500px">
 			<thead>
-				<tr id="listShopView">
+				<tr id="listShopViewByArray">
 					<th>ID</th>
 					<th>Name</th>
 					<th>Local</th>
@@ -37,19 +34,17 @@
 				</tr>
 			</thead>
 
-			<c:forEach var="listShops" items="${allOfShop}">
+			<c:forEach var="arrayShop" items="${arrayShop}">
 				<tbody>
 					<tr>
-						<td>${listShops.id}</td>
-						<td>${listShops.name}</td>
-						<td>${listShops.local}</td>
-						<td>${listShops.email}</td>
+						<td>${arrayShop.id}</td>
+						<td>${arrayShop.name}</td>
+						<td>${arrayShop.local}</td>
+						<td>${arrayShop.email}</td>
 					</tr>
 				</tbody>
 			</c:forEach>
 		</table>
 	</div>
-
-
 </body>
 </html>

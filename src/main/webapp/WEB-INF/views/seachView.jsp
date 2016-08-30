@@ -15,21 +15,17 @@
 	font-weight: bold;
 }
 
-#listShopView tr:first-child {
+#aShopView tr:first-child {
 	font-weight: bold;
 }
 </style>
 
 </head>
 <body>
-<form method="get" action="/searchByName">
-	<input type="text" required="" name="name">
-	<input type="submit" value="Tìm">
-</form>
 	<div class="container">
 		<table class="table table-hover " width="500px">
 			<thead>
-				<tr id="listShopView">
+				<tr id="aShopView">
 					<th>ID</th>
 					<th>Name</th>
 					<th>Local</th>
@@ -37,16 +33,16 @@
 				</tr>
 			</thead>
 
-			<c:forEach var="listShops" items="${allOfShop}">
+			<%-- <c:forEach var="ashop" items="${ashop}"> --%>
 				<tbody>
 					<tr>
-						<td>${listShops.id}</td>
-						<td>${listShops.name}</td>
-						<td>${listShops.local}</td>
-						<td>${listShops.email}</td>
+						<td>${ashop.id}</td>
+						<td>${ashop.name}</td>
+						<td>${ashop.local}</td>
+						<td>${ashop.email}</td>
 					</tr>
 				</tbody>
-			</c:forEach>
+			<%-- </c:forEach> --%>
 		</table>
 	</div>
 
