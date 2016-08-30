@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 
 @Entity
-@NamedQuery(name = "Shop.searchname", query = "SELECT p FROM Shop p WHERE LOWER(p.name) = LOWER(?1)")
+/*@NamedQuery(name = "Shop.searchname", query = "SELECT p FROM Shop p WHERE LOWER(p.name) = LOWER(?1)")*/
 @Table(name ="tb_shop")
 public class Shop implements Serializable{
 	

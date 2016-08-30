@@ -41,6 +41,35 @@ public List<Shop> searchName( String name){
 
 }
 */
+	public Shop saveShop(){
+		Shop shop = new Shop();
+		shop.setId(4);
+		shop.setName("quoc");
+		shop.setEmail("quoc@gmail.com");
+		shop.setLocal("ha noi");
+
+
+	return reponsitoryCustom.save(shop);
+
+
+
+	}
+	public Boolean deleteShop(){
+
+		reponsitoryCustom.delete(2);
+		return  true;
+
+
+	}
+	public Boolean deleObject(){
+		Shop shop = new Shop();
+		shop = reponsitoryCustom.findOne(5);
+
+		reponsitoryCustom.delete(shop);
+		return  true;
+
+
+	}
 
 	
 }

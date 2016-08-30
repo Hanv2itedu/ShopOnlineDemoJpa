@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -73,4 +74,35 @@ public class HomeController {
 		}
 		return "searchname";
 	}*/
+	@RequestMapping(value = "/saveShop",method = RequestMethod.GET)
+	public String saveShop(Model model){
+
+		Shop shop = new Shop();
+
+		shop = shopService.saveShop();
+		/*if(shop != null){
+			return true;
+		}
+		else
+		return false;*/
+
+
+		model.addAttribute("saveShop",shop);
+		return "saveSusscess";
+
+	}
+	@RequestMapping(value = "deleteById",method = RequestMethod.GET)
+	public String deleteShop(){
+
+
+		shopService.deleteShop();
+		return "index";
+	}
+	@RequestMapping(value = "/deleteOBject",method = RequestMethod.GET)
+	public String deleteObject(){
+
+
+		shopService.deleteShop();
+		return "index";
+	}
 }
