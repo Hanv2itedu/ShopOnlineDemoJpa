@@ -4,6 +4,7 @@ import java.util.List;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import com.jfreedom.dao.ShopDAO;
@@ -33,7 +34,13 @@ public class ShopServiceImpl implements ShopService{
 	/*public List<Shop> findAllArray(){
 		return  reponsitoryCustom.
 	}*/
+/*
+public List<Shop> searchName( String name){
 
+	return reponsitoryCustom.searchName( name);
+
+}
+*/
 
 	
 }

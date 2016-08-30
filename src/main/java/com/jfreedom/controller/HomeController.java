@@ -2,9 +2,9 @@ package com.jfreedom.controller;
 
 import java.util.List;
 
-import com.jfreedom.reponsitory.ShopJPAReponsitoryCustom;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.jfreedom.model.Shop;
 import com.jfreedom.service.ShopService;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 
 @Controller
@@ -51,4 +54,23 @@ public class HomeController {
 		model.addAttribute("shop",shop);
 		return "findOne";
 	}
+	/*@RequestMapping(value = "/searchByName")
+	public String searchName(HttpServletRequest httpRequest,HttpSession session){
+
+
+		String name = httpRequest.getParameter("name");
+		if(name == null){
+			httpRequest.setAttribute("l?i tìm ki?m", "?i?n tên mu?n tìm");
+		}else {
+
+
+			List<Shop> shopListsearch = shopService.searchName(name);
+			session.setAttribute("searchName",shopListsearch);
+
+
+
+
+		}
+		return "searchname";
+	}*/
 }

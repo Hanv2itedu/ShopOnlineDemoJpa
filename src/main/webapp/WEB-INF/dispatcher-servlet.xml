@@ -53,6 +53,7 @@
 		</property>
 	</bean>
 
+
 	<!-- Simple implementation of the standard JDBC DataSource interface,
          configuring the plain old JDBC DriverManager via bean properties -->
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">

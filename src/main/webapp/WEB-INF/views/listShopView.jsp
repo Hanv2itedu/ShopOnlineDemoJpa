@@ -22,6 +22,10 @@
 
 </head>
 <body>
+<form method="get" action="/searchByName">
+	<input type="text" required="" name="name">
+	<input type="submit" value="Tìm">
+</form>
 	<div class="container">
 		<table class="table table-hover " width="500px">
 			<thead>
