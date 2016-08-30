@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.jfreedom.model.Shop;
 import com.jfreedom.service.ShopService;
+import com.sun.javafx.sg.prism.NGShape.Mode;
 
 
 @Controller
@@ -57,6 +58,25 @@ public class HomeController {
 		return "insertShop";
 	}
 	
+	// delete 1 shop co id = 4
+	@RequestMapping(value="/deleteId", method=RequestMethod.GET)
+	public String deleteID(Model model){
+		boolean kq;
+		kq = shopService.deleteByID();
+		model.addAttribute("kq", kq);
+		return"deleteById";
+	}
+	
+	// delete 1 shop (object)
+	@RequestMapping(value="/deleteObj", method=RequestMethod.GET)
+	public String deleteObj(Model model){
+		boolean kq;
+		kq = shopService.deleteEntity();
+		model.addAttribute("kq", kq);
+		return"deleteByObj";
+	}
+	
+	
 	@RequestMapping(value = "/findID",method = RequestMethod.GET)
 	public String findOne(Model model){
 		Shop shop = new Shop();
@@ -66,23 +86,7 @@ public class HomeController {
 		model.addAttribute("shop",shop);
 		return "findOne";
 	}
-	/*@RequestMapping(value = "/searchByName")
-	public String searchName(HttpServletRequest httpRequest,HttpSession session){
-
-
-		String name = httpRequest.getParameter("name");
-		if(name == null){
-			httpRequest.setAttribute("l?i tìm ki?m", "?i?n tên mu?n tìm");
-		}else {
-
-
-			List<Shop> shopListsearch = shopService.searchName(name);
-			session.setAttribute("searchName",shopListsearch);
-
-
-
-
-		}
-		return "searchname";
-	}*/
+	
+	
+	
 }

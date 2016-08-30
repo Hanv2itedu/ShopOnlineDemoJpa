@@ -12,10 +12,8 @@ public interface ShopService {
 
 	public Shop findShop();
 	public boolean insert();
-//	public List<Shop> findArray();
 
-	//public List<Shop> findArrayShop();
 	public  Shop findOneId();
-	/*public  List<Shop> findAllArray();*/
-	/*List<Shop> searchName( String name);*/
+	public boolean deleteByID();
+	public boolean deleteEntity();
 }

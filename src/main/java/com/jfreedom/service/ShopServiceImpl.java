@@ -59,19 +59,20 @@ public List<Shop> searchName( String name){
 		return true;
 		
 	}
+	public boolean deleteByID() {
+		reponsitoryCustom.delete(5);
+		return true;
+	}
+	public boolean deleteEntity() {
+		Shop shop = new Shop();
+		Shop rs = reponsitoryCustom.findOne(5);
+		reponsitoryCustom.delete(rs);
+		return false;
+	}
+	
+	
 
-/*
-	public List<Shop> findArrayShop() {
-		int[] array = {2,3};
-		List<Shop> listShop = new  ArrayList<Shop>();
-		Shop s = new Shop();
-		for (int i : array) {
-			s = reponsitoryCustom.findOne(i);
-			System.out.println("shop id" + s.getId() + "Shop name :"+s.getName()+" Local: "+s.getLocal()+" Email : "+s.getEmail());
-			listShop.add(s);
-		}		
-		return listShop ;
-	}*/
+
 }
 
 	
