@@ -39,4 +39,22 @@ public class HomeController {
 		model.addAttribute("allOfShop",listShops);
 		return "listShopView";
 	}
+	
+	@RequestMapping(value="/seach", method=RequestMethod.GET)
+	public String findAShop(Model model){
+		Shop ashop = new Shop();
+		ashop = shopService.findShop();
+		System.out.println("shop id"+ashop.getName());
+		model.addAttribute("ashop", ashop);
+		return "seachView";
+	}
+	
+	@RequestMapping(value="/insert", method=RequestMethod.GET)
+	public String insertShop(Model model){
+		boolean kq;
+		kq= shopService.insert();
+		model.addAttribute("kq",kq);
+		return "insertShop";
+	}
+	
 }
