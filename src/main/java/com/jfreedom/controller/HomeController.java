@@ -61,7 +61,7 @@ public class HomeController {
 
 		String name = httpRequest.getParameter("name");
 		if(name == null){
-			httpRequest.setAttribute("l?i tìm ki?m", "?i?n tên mu?n tìm");
+			httpRequest.setAttribute("loi tìm kiem", "dien tên muon tìm");
 		}else {
 
 
@@ -75,16 +75,16 @@ public class HomeController {
 		return "searchname";
 	}*/
 	@RequestMapping(value = "/saveShop",method = RequestMethod.GET)
-	public String saveShop(Model model){
+	public String saveShop(HttpServletRequest request,Model model){
 
 		Shop shop = new Shop();
 
 		shop = shopService.saveShop();
-		/*if(shop != null){
-			return true;
+		if(shop.getId()!= 4){
+			request.setAttribute("loi ket noi","kiem tra lai");
 		}
 		else
-		return false;*/
+
 
 
 		model.addAttribute("saveShop",shop);
@@ -96,13 +96,13 @@ public class HomeController {
 
 
 		shopService.deleteShop();
-		return "index";
+		return "listShopView";
 	}
 	@RequestMapping(value = "/deleteOBject",method = RequestMethod.GET)
 	public String deleteObject(){
 
 
-		shopService.deleteShop();
-		return "index";
+		shopService.deleObject();
+		return "listShopView";
 	}
 }

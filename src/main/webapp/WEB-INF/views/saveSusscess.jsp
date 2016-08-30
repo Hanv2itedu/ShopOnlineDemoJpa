@@ -19,10 +19,10 @@ save thanh cong
   </tr>
   </thead>
   <tr>
-    <td>${shop.id}</td>
-    <td>${shop.name}</td>
-    <td>${shop.local}</td>
-    <td>${shop.email}</td>
+    <td>${saveShop.id}</td>
+    <td>${saveShop.name}</td>
+    <td>${saveShop.local}</td>
+    <td>${saveShop.email}</td>
   </tr>
 
 </table>
