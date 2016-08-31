@@ -14,4 +14,5 @@ public interface ShopService {
 	public Shop saveShop();
 	public Boolean deleteShop();
 	public Boolean deleObject();
+	public List<Shop> findByName(String name);
 }

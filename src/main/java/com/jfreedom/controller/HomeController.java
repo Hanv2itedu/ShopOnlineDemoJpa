@@ -105,4 +105,12 @@ public class HomeController {
 		shopService.deleObject();
 		return "listShopView";
 	}
+	@RequestMapping(value = "/searchByName",method = RequestMethod.GET)
+	public String findByName(@RequestParam(value="name", required=false, defaultValue="World")String name,Model model ){
+
+		List<Shop> listShops = shopService.findByName(name);
+		model.addAttribute("listShops",listShops);
+		return "findByName";
+
+	}
 }
