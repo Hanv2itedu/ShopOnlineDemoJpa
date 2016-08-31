@@ -34,44 +34,13 @@ public class ShopServiceImpl implements ShopService{
 	/*public List<Shop> findAllArray(){
 		return  reponsitoryCustom.
 	}*/
-/*public List<Shop> searchName( String name){
+/*
+public List<Shop> searchName( String name){
 
 	return reponsitoryCustom.searchName( name);
 
-}*/
-	public Shop saveShop(){
-		Shop shop = new Shop();
-		shop.setId(4);
-		shop.setName("quoc");
-		shop.setEmail("quoc@gmail.com");
-		shop.setLocal("ha noi");
-
-
-	return reponsitoryCustom.save(shop);
-
-
-
-	}
-	public Boolean deleteShop(){
-
-		reponsitoryCustom.delete(2);
-		return  true;
-
-
-	}
-	public Boolean deleObject(){
-		Shop shop = new Shop();
-		shop = reponsitoryCustom.findOne(1);
-
-		reponsitoryCustom.delete(shop);
-		return  true;
-
-
-	}
-	public List<Shop> findByName(String name){
-
-		return reponsitoryCustom.findByName(name);
-	}
+}
+*/
 
 	
 }

@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -61,7 +60,7 @@ public class HomeController {
 
 		String name = httpRequest.getParameter("name");
 		if(name == null){
-			httpRequest.setAttribute("loi tìm kiem", "dien tên muon tìm");
+			httpRequest.setAttribute("l?i tìm ki?m", "?i?n tên mu?n tìm");
 		}else {
 
 
@@ -74,43 +73,4 @@ public class HomeController {
 		}
 		return "searchname";
 	}*/
-	@RequestMapping(value = "/saveShop",method = RequestMethod.GET)
-	public String saveShop(HttpServletRequest request,Model model){
-
-		Shop shop = new Shop();
-
-		shop = shopService.saveShop();
-		if(shop.getId()!= 4){
-			request.setAttribute("loi ket noi","kiem tra lai");
-		}
-		else
-
-
-
-		model.addAttribute("saveShop",shop);
-		return "saveSusscess";
-
-	}
-	@RequestMapping(value = "deleteById",method = RequestMethod.GET)
-	public String deleteShop(){
-
-
-		shopService.deleteShop();
-		return "listShopView";
-	}
-	@RequestMapping(value = "/deleteOBject",method = RequestMethod.GET)
-	public String deleteObject(){
-
-
-		shopService.deleObject();
-		return "listShopView";
-	}
-	@RequestMapping(value = "/searchByName",method = RequestMethod.GET)
-	public String findByName(@RequestParam(value="name", required=false, defaultValue="World")String name,Model model ){
-
-		List<Shop> listShops = shopService.findByName(name);
-		model.addAttribute("listShops",listShops);
-		return "findByName";
-
-	}
 }

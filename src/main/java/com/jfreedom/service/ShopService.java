@@ -11,8 +11,4 @@ public interface ShopService {
 	public  Shop findOneId();
 	/*public  List<Shop> findAllArray();*/
 	/*List<Shop> searchName( String name);*/
-	public Shop saveShop();
-	public Boolean deleteShop();
-	public Boolean deleObject();
-	public List<Shop> findByName(String name);
 }
