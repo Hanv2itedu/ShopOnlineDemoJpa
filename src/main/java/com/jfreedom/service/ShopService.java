@@ -16,4 +16,6 @@ public interface ShopService {
 	public  Shop findOneId();
 	public boolean deleteByID();
 	public boolean deleteEntity();
+	
+	public Shop findByNameShop(String name);
 }

@@ -19,29 +19,17 @@ import com.jfreedom.reponsitory.ShopJPAReponsitoryCustom;
 public class ShopServiceImpl implements ShopService{
 
 	@Autowired
-	//ShopDAO dao;
 	ShopJPAReponsitoryCustom reponsitoryCustom;
 	
-	
+	// Show all shops in database
 	public List<Shop> getAllShops() {
-		
-		//return dao.getAllShops();
 		return reponsitoryCustom.findAll();
 	}
+	
+	// Look for a shop by id
 	public  Shop findOneId(){
-
 		return reponsitoryCustom.findOne(2);
 	}
-	/*public List<Shop> findAllArray(){
-		return  reponsitoryCustom.
-	}*/
-/*
-public List<Shop> searchName( String name){
-
-	return reponsitoryCustom.searchName( name);
-
-}
-*/
 
 
 	public Shop findShop() {
@@ -50,6 +38,7 @@ public List<Shop> searchName( String name){
 	}
 
 
+	// Insert a shop 
 	public boolean insert() {
 		Shop shop = new Shop();
 		shop.setName("Shop4");
@@ -57,22 +46,26 @@ public List<Shop> searchName( String name){
 		shop.setEmail("shoponline4@hotmail.com");
 		reponsitoryCustom.save(shop);
 		return true;
-		
 	}
+	
+	// Delete a shop by id
 	public boolean deleteByID() {
 		reponsitoryCustom.delete(5);
 		return true;
 	}
+	
+	//Delete a object (shop)
 	public boolean deleteEntity() {
 		Shop shop = new Shop();
 		Shop rs = reponsitoryCustom.findOne(5);
 		reponsitoryCustom.delete(rs);
-		return false;
+		return true;
+	}
+
+	public Shop findByNameShop(String name) {
+		return reponsitoryCustom.findByName(name);
 	}
 	
-	
-
-
 }
 
 	

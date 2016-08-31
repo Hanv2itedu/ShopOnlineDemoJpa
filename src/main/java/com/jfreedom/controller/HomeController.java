@@ -17,20 +17,21 @@ import com.sun.javafx.sg.prism.NGShape.Mode;
 
 @Controller
 public class HomeController {
-	
+
 	@Autowired
 	ShopService shopService;
-	
+
 	@RequestMapping(value="/home", method=RequestMethod.GET)
 	public String homeHello(@RequestParam("shopname") String name, ModelMap model){
 		Shop shop = new Shop();
 		shop.setName(name);
 		//System.out.println("Name : "+shop.getName());
 		model.addAttribute("shop",shop);
-		
+
 		return "hello";
 	}
-	
+
+	// Display all shops in database
 	@RequestMapping(value="/form", method =RequestMethod.GET)
 	public String setupForm( Model model){
 		List<Shop> listShops =  shopService.getAllShops();
@@ -40,7 +41,8 @@ public class HomeController {
 		model.addAttribute("allOfShop",listShops);
 		return "listShopView";
 	}
-	
+
+	// seach a shop by id
 	@RequestMapping(value="/seach", method=RequestMethod.GET)
 	public String findAShop(Model model){
 		Shop ashop = new Shop();
@@ -49,7 +51,7 @@ public class HomeController {
 		model.addAttribute("ashop", ashop);
 		return "seachView";
 	}
-	
+	// Insert a shop
 	@RequestMapping(value="/insert", method=RequestMethod.GET)
 	public String insertShop(Model model){
 		boolean kq;
@@ -57,7 +59,7 @@ public class HomeController {
 		model.addAttribute("kq",kq);
 		return "insertShop";
 	}
-	
+
 	// delete 1 shop co id = 4
 	@RequestMapping(value="/deleteId", method=RequestMethod.GET)
 	public String deleteID(Model model){
@@ -66,7 +68,7 @@ public class HomeController {
 		model.addAttribute("kq", kq);
 		return"deleteById";
 	}
-	
+
 	// delete 1 shop (object)
 	@RequestMapping(value="/deleteObj", method=RequestMethod.GET)
 	public String deleteObj(Model model){
@@ -75,18 +77,24 @@ public class HomeController {
 		model.addAttribute("kq", kq);
 		return"deleteByObj";
 	}
+
+	// find a shop with method findByName(String name)
+	@RequestMapping(value="/findbyname", method=RequestMethod.GET)
+	public String findShop(@RequestParam("shopname") String name, Model model){
+		Shop shop = shopService.findByNameShop(name);
+		model.addAttribute("shop", shop);
+		return "findByName";
+	}
 	
-	
+
 	@RequestMapping(value = "/findID",method = RequestMethod.GET)
 	public String findOne(Model model){
 		Shop shop = new Shop();
-
-
-		 shop = shopService.findOneId();
+		shop = shopService.findOneId();
 		model.addAttribute("shop",shop);
 		return "findOne";
 	}
-	
-	
-	
+
+
+
 }
