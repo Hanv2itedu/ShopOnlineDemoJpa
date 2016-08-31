@@ -36,10 +36,12 @@
 			<%-- <c:forEach var="shop" items="${shop}"> --%>
 				<tbody>
 					<tr>
+					
 						<td>${shop.id}</td>
 						<td>${shop.name}</td>
 						<td>${shop.local}</td>
 						<td>${shop.email}</td>
+						
 					</tr>
 				</tbody>
 			<%-- </c:forEach> --%>

@@ -64,6 +64,7 @@ public class ShopServiceImpl implements ShopService{
 
 	public Shop findByNameShop(String name) {
 		return reponsitoryCustom.findByName(name);
+		
 	}
 	
 }

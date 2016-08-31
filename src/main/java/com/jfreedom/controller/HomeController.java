@@ -84,6 +84,7 @@ public class HomeController {
 		Shop shop = shopService.findByNameShop(name);
 		model.addAttribute("shop", shop);
 		return "findByName";
+		
 	}
 	
 

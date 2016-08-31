@@ -18,4 +18,5 @@ public interface ShopService {
 	public boolean deleteEntity();
 	
 	public Shop findByNameShop(String name);
+	
 }
