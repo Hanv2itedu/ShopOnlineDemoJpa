@@ -34,11 +34,32 @@ public class ShopServiceImpl implements ShopService{
 	/*public List<Shop> findAllArray(){
 		return  reponsitoryCustom.
 	}*/
-public List<Shop> findByName( String name){
+	public List<Shop> findByName( String name){
 
-	return reponsitoryCustom.findByName(name);
+		return reponsitoryCustom.findByName(name);
+
+	}
+public List<Shop> findByNameLike( String name){
+
+	return reponsitoryCustom.findByNameLike("%" + name + "%");
 
 }
+	public  List<Shop> findByNameContaining(String name){
+
+		return reponsitoryCustom.findByNameContaining(name);
+	}
+	public  List<Shop> findByNameStartingWith(String name){
+
+		return reponsitoryCustom.findByNameContaining(name);
+	}
+	public  List<Shop> findByNameEndingWith(String name){
+
+		return reponsitoryCustom.findByNameEndingWith(name);
+	}
+	public  List<Shop> findByNameEgnoreCase(String name){
+
+		return reponsitoryCustom.findByNameIgnoreCase(name);
+	}
 
 	
 }

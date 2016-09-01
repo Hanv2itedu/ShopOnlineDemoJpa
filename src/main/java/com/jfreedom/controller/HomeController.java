@@ -54,7 +54,7 @@ public class HomeController {
 		model.addAttribute("shop",shop);
 		return "findOne";
 	}
-	@RequestMapping(value = "/searchByName")
+	/*@RequestMapping(value = "/searchByName")
 	public String searchName(@RequestParam(value="name", required=false, defaultValue="World")String name,HttpSession session){
 
 
@@ -72,6 +72,100 @@ public class HomeController {
 
 		}
 		return "seachView";
-	}
+	}*/
+	/*@RequestMapping(value = "/searchByName")
+	public String searchNameLike(@RequestParam(value="name", required=false, defaultValue="World")String name,HttpSession session){
 
+
+
+		if(name == null){
+			session.setAttribute("l?i tìm ki?m", "?i?n tên mu?n tìm");
+		}else {
+
+
+			List<Shop> shopListsearch = shopService.findByNameLike(name);
+			session.setAttribute("searchName",shopListsearch);
+
+
+
+
+		}
+		return "seachView";
+	}*/
+/*	@RequestMapping(value = "/searchByName")
+	public String searchNameContaining(@RequestParam(value="name", required=false, defaultValue="World")String name,HttpSession session){
+
+
+
+		if(name == null){
+			session.setAttribute("l?i tìm ki?m", "?i?n tên mu?n tìm");
+		}else {
+
+
+			List<Shop> shopListsearch = shopService.findByNameContaining(name);
+			session.setAttribute("searchName",shopListsearch);
+
+
+
+
+		}
+		return "seachView";
+	}*/
+	/*@RequestMapping(value = "/searchByName")
+	public String searchNameStartWith(@RequestParam(value="name", required=false, defaultValue="World")String name,HttpSession session){
+
+
+
+		if(name == null){
+			session.setAttribute("l?i tìm ki?m", "?i?n tên mu?n tìm");
+		}else {
+
+
+			List<Shop> shopListsearch = shopService.findByNameStartingWith(name);
+			session.setAttribute("searchName",shopListsearch);
+
+
+
+
+		}
+		return "seachView";
+	}*/
+	/*@RequestMapping(value = "/searchByName")
+	public String searchNameEndwith(@RequestParam(value="name", required=false, defaultValue="World")String name,HttpSession session){
+
+
+
+		if(name == null){
+			session.setAttribute("l?i tìm ki?m", "?i?n tên mu?n tìm");
+		}else {
+
+
+			List<Shop> shopListsearch = shopService.findByNameEndingWith(name);
+			session.setAttribute("searchName",shopListsearch);
+
+
+
+
+		}
+		return "seachView";
+	}*/
+	@RequestMapping(value = "/searchByName")
+	public String searchNameEgnoreCase(@RequestParam(value="name", required=false, defaultValue="World")String name,HttpSession session){
+
+
+
+		if(name == null){
+			session.setAttribute("l?i tìm ki?m", "?i?n tên mu?n tìm");
+		}else {
+
+
+			List<Shop> shopListsearch = shopService.findByNameEgnoreCase(name);
+			session.setAttribute("searchName",shopListsearch);
+
+
+
+
+		}
+		return "seachView";
+	}
 }

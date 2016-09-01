@@ -11,4 +11,11 @@ public interface ShopService {
 	public  Shop findOneId();
 	/*public  List<Shop> findAllArray();*/
 	public List<Shop> findByName( String name);
+	List<Shop> findByNameLike( String name);
+	public  List<Shop> findByNameContaining(String name);
+	List<Shop> findByNameStartingWith(String name);
+	List<Shop> findByNameEndingWith(String name);
+	List<Shop> findByNameEgnoreCase(String name);
+
+
 }
