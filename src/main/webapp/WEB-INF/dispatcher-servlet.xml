@@ -58,9 +58,9 @@
          configuring the plain old JDBC DriverManager via bean properties -->
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/shoponline" />
+		<property name="url" value="jdbc:mysql://localhost:3306/hocvien" />
 		<property name="username" value="root" />
-		<property name="password" value="" />
+		<property name="password" value="123456" />
 	</bean>
 
 	<jpa:repositories base-package="com.jfreedom.reponsitory" />

@@ -10,5 +10,5 @@ public interface ShopService {
 	public List<Shop> getAllShops();
 	public  Shop findOneId();
 	/*public  List<Shop> findAllArray();*/
-	/*List<Shop> searchName( String name);*/
+	public List<Shop> findByName( String name);
 }

@@ -33,16 +33,16 @@
 				</tr>
 			</thead>
 
-			<%-- <c:forEach var="ashop" items="${ashop}"> --%>
+			 <c:forEach var="searchName" items="${searchName}">
 				<tbody>
 					<tr>
-						<td>${ashop.id}</td>
-						<td>${ashop.name}</td>
-						<td>${ashop.local}</td>
-						<td>${ashop.email}</td>
+						<td>${searchName.id}</td>
+						<td>${searchName.name}</td>
+						<td>${searchName.local}</td>
+						<td>${searchName.email}</td>
 					</tr>
 				</tbody>
-			<%-- </c:forEach> --%>
+			 </c:forEach>
 		</table>
 	</div>
 

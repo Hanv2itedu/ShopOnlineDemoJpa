@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface ShopJPAReponsitoryCustom extends JpaRepository<Shop, Integer>{
 
-    /*List<Shop> searchName(@Param("name") String name);*/
+    List<Shop> findByName(String name);
 
 
 

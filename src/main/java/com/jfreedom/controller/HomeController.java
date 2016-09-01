@@ -54,23 +54,24 @@ public class HomeController {
 		model.addAttribute("shop",shop);
 		return "findOne";
 	}
-	/*@RequestMapping(value = "/searchByName")
-	public String searchName(HttpServletRequest httpRequest,HttpSession session){
+	@RequestMapping(value = "/searchByName")
+	public String searchName(@RequestParam(value="name", required=false, defaultValue="World")String name,HttpSession session){
 
 
-		String name = httpRequest.getParameter("name");
+
 		if(name == null){
-			httpRequest.setAttribute("l?i tìm ki?m", "?i?n tên mu?n tìm");
+			session.setAttribute("l?i tìm ki?m", "?i?n tên mu?n tìm");
 		}else {
 
 
-			List<Shop> shopListsearch = shopService.searchName(name);
+			List<Shop> shopListsearch = shopService.findByName(name);
 			session.setAttribute("searchName",shopListsearch);
 
 
 
 
 		}
-		return "searchname";
-	}*/
+		return "seachView";
+	}
+
 }
