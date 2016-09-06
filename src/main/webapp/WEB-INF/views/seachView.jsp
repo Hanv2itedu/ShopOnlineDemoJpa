@@ -30,6 +30,8 @@
 					<th>Name</th>
 					<th>Local</th>
 					<th>Email</th>
+					<th>Date</th>
+
 				</tr>
 			</thead>
 
@@ -40,6 +42,7 @@
 						<td>${searchName.name}</td>
 						<td>${searchName.local}</td>
 						<td>${searchName.email}</td>
+						<td>${searchName.date}</td>
 					</tr>
 				</tbody>
 			 </c:forEach>

@@ -1,5 +1,6 @@
 package com.jfreedom.service;
 
+import java.util.Date;
 import java.util.List;
 
 
@@ -59,6 +60,36 @@ public List<Shop> findByNameLike( String name){
 	public  List<Shop> findByNameEgnoreCase(String name){
 
 		return reponsitoryCustom.findByNameIgnoreCase(name);
+	}
+	/*public List<Shop> findByEmail(String email){
+		return reponsitoryCustom.findByEmail(email);
+	}*/
+	public List<Shop> findByNameAndLocal(String name,String local){
+	return reponsitoryCustom.findByNameAndLocal(name, local);
+	}
+	public List<Shop> findByNameOrLocal(String name,String local){
+		return reponsitoryCustom.findByNameOrLocal(name, local);
+	}
+	public List<Shop> findByNameNot(String name){
+		return reponsitoryCustom.findByNameNot(name);
+	}
+	public List<Shop> findByDateAfter(Date date){
+
+		return  reponsitoryCustom.findByDateAfter(date);
+	}
+	public List<Shop> findByDateBefore (Date date){
+
+		return  reponsitoryCustom.findByDateBefore(date);
+	}
+	public List<Shop> findByDateBetween(Date from,Date to){
+
+		return reponsitoryCustom.findByDateBetween(from, to);
+	}
+	public List<Shop> listAllShop(){
+		return reponsitoryCustom.listAllShop();
+	}
+	public List<Shop> listAllShopByName(String name){
+		return reponsitoryCustom.listAllShopByName(name);
 	}
 
 	

@@ -23,9 +23,14 @@
 </head>
 <body>
 <form method="get" action="/searchByName">
-	<input type="text" required="" name="name">
-	<input type="submit" value="Tìm">
+	<label>local</label><input type="text"  name="name">
+	<%--label>name</label></label><input type="text"  name="local">
+	<label>datefrom</label></label><input type="text"  name="date">
+		<label>dateto</label></label><input type="text"  name="date">--%>
+
+	<input type="submit" value="tim">
 </form>
+
 	<div class="container">
 		<table class="table table-hover " width="500px">
 			<thead>
@@ -34,6 +39,7 @@
 					<th>Name</th>
 					<th>Local</th>
 					<th>Email</th>
+					<th>Date</th>
 				</tr>
 			</thead>
 
@@ -44,6 +50,7 @@
 						<td>${listShops.name}</td>
 						<td>${listShops.local}</td>
 						<td>${listShops.email}</td>
+						<td>${listShops.date}</td>
 					</tr>
 				</tbody>
 			</c:forEach>

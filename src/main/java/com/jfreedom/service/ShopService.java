@@ -1,5 +1,6 @@
 package com.jfreedom.service;
 
+import java.util.Date;
 import java.util.List;
 
 import com.jfreedom.model.Shop;
@@ -16,6 +17,15 @@ public interface ShopService {
 	List<Shop> findByNameStartingWith(String name);
 	List<Shop> findByNameEndingWith(String name);
 	List<Shop> findByNameEgnoreCase(String name);
+	/*List<Shop> findByEmail(String email);*/
+	List<Shop> findByNameAndLocal(String name,String local);
+	List<Shop> findByNameOrLocal(String name,String local);
+	List<Shop> findByNameNot(String name);
+	List<Shop> findByDateAfter(Date date);
+	List<Shop> findByDateBefore(Date date);
+	List<Shop> findByDateBetween(Date from,Date to);
+	 List<Shop> listAllShop();
+	List<Shop> listAllShopByName(String name);
 
 
 }

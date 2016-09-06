@@ -1,10 +1,12 @@
 package com.jfreedom.controller;
 
+import java.util.Date;
 import java.util.List;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -51,7 +53,7 @@ public class HomeController {
 
 
 		 shop = shopService.findOneId();
-		model.addAttribute("shop",shop);
+		model.addAttribute("shop", shop);
 		return "findOne";
 	}
 	/*@RequestMapping(value = "/searchByName")
@@ -149,7 +151,7 @@ public class HomeController {
 		}
 		return "seachView";
 	}*/
-	@RequestMapping(value = "/searchByName")
+	/*@RequestMapping(value = "/searchByName")
 	public String searchNameEgnoreCase(@RequestParam(value="name", required=false, defaultValue="World")String name,HttpSession session){
 
 
@@ -160,6 +162,86 @@ public class HomeController {
 
 
 			List<Shop> shopListsearch = shopService.findByNameEgnoreCase(name);
+			session.setAttribute("searchName",shopListsearch);
+
+
+
+
+		}
+		return "seachView";
+	}*/
+	/*@RequestMapping(value = "/searchByEmail")
+	public String searchEmail(@RequestParam(value="email",required=false, defaultValue="World")String email,HttpSession session){
+
+
+
+		if(email == null){
+			session.setAttribute("l?i tìm ki?m", "?i?n tên mu?n tìm");
+		}else {
+
+
+			List<Shop> shopListsearch = shopService.findByEmail(email);
+			session.setAttribute("searchName",shopListsearch);
+
+
+
+
+		}
+		return "seachView";
+	}*/
+	/*@RequestMapping(value = "/searchByName")
+	public String searchNameAndlocal(@RequestParam(value="name", defaultValue="World")String name,@RequestParam(value="local",defaultValue="World")String local,HttpSession session){
+
+		List<Shop> shopListsearch = shopService.findByNameAndLocal(name,local);
+			session.setAttribute("searchName", shopListsearch);
+		return "seachView";
+	}*/
+	/*@RequestMapping(value = "/searchByName")
+	public String searchNameOrLocal(@RequestParam(value="name", defaultValue="World")String name,@RequestParam(value="local",defaultValue="World")String local,HttpSession session){
+
+		List<Shop> shopListsearch = shopService.findByNameAndLocal(name, local);
+		session.setAttribute("searchName",shopListsearch);
+		return "seachView";
+	}*/
+	/*@RequestMapping(value = "/searchByName")
+	public String searchDateAfter (@RequestParam(value="date") @DateTimeFormat(pattern = "dd/MM/yyyy") Date date,HttpSession session){
+
+		List<Shop> shopListsearch = shopService.findByDateAfter(date);
+		session.setAttribute("searchName", shopListsearch);
+		return "seachView";
+	}*/
+	/*@RequestMapping(value = "/searchByName")
+	public String searchDateBefore  (@RequestParam(value="date") @DateTimeFormat(pattern = "dd/MM/yyyy") Date date,HttpSession session){
+
+		List<Shop> shopListsearch = shopService.findByDateBefore(date);
+		session.setAttribute("searchName", shopListsearch);
+		return "seachView";
+	}*/
+	/*@RequestMapping(value = "/searchByName")
+	public String searchDateBefore  (@RequestParam(value="date") @DateTimeFormat(pattern = "dd/MM/yyyy") Date from,@RequestParam(value="date") @DateTimeFormat(pattern = "dd/MM/yyyy") Date to,HttpSession session){
+
+		List<Shop> shopListsearch = shopService.findByDateBetween(from,to);
+		session.setAttribute("searchName", shopListsearch);
+		return "seachView";
+	}*/
+	@RequestMapping(value = "/ListAllShop")
+	public String searchDateBefore  (Model model){
+
+		List<Shop> shopListsearch = shopService.listAllShop();
+		model.addAttribute("ListAllShop", shopListsearch);
+		return "listAllShop";
+	}
+	@RequestMapping(value = "/searchByName")
+	public String searchName(@RequestParam(value="name", required=false, defaultValue="World")String name,HttpSession session){
+
+
+
+		if(name == null){
+			session.setAttribute("l?i tìm ki?m", "?i?n tên mu?n tìm");
+		}else {
+
+
+			List<Shop> shopListsearch = shopService.listAllShopByName(name);
 			session.setAttribute("searchName",shopListsearch);
 
 
