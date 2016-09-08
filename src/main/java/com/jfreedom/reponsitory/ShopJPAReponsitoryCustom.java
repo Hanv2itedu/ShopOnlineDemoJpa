@@ -30,6 +30,8 @@ public interface ShopJPAReponsitoryCustom extends JpaRepository<Shop, Integer>{
 
     @Query("select s from Shop s where s.name = :name")
     public List<Shop> listAllShopByName(@Param("name") String name);
+    public List<Shop> findAllShop();
+
 
 
 }

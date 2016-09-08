@@ -26,6 +26,7 @@ public interface ShopService {
 	List<Shop> findByDateBetween(Date from,Date to);
 	 List<Shop> listAllShop();
 	List<Shop> listAllShopByName(String name);
+	List<Shop> findAllShop();
 
 
 }

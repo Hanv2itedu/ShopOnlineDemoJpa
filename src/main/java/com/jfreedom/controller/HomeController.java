@@ -4,6 +4,8 @@ import java.util.Date;
 import java.util.List;
 
 
+import com.jfreedom.model.Custommer;
+import org.hibernate.annotations.SourceType;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -52,8 +54,18 @@ public class HomeController {
 		Shop shop = new Shop();
 
 
+
 		 shop = shopService.findOneId();
+
+		List<Custommer> custommerList = shop.getCustommers();
+		for (Custommer custommer : custommerList) {
+			System.out.println("cus id" + custommer.getId() + "cus name :"+custommer.getCusName()+" addd: "+custommer.getAddress());
+		}
+
+
+
 		model.addAttribute("shop", shop);
+		model.addAttribute("custommerList", custommerList);
 		return "findOne";
 	}
 	/*@RequestMapping(value = "/searchByName")
@@ -225,16 +237,24 @@ public class HomeController {
 		return "seachView";
 	}*/
 	@RequestMapping(value = "/ListAllShop")
-	public String searchDateBefore  (Model model){
+	public String searchAllAnotation (Model model){
 
 		List<Shop> shopListsearch = shopService.listAllShop();
+		model.addAttribute("ListAllShop", shopListsearch);
+		return "listAllShop";
+	}
+	@RequestMapping(value = "/findAllShop")
+	//search by name query
+	public String searchFindNameQuery  (Model model){
+
+		List<Shop> shopListsearch = shopService.findAllShop();
 		model.addAttribute("ListAllShop", shopListsearch);
 		return "listAllShop";
 	}
 	@RequestMapping(value = "/searchByName")
 	public String searchName(@RequestParam(value="name", required=false, defaultValue="World")String name,HttpSession session){
 
-
+//search by name query voi parametter name
 
 		if(name == null){
 			session.setAttribute("l?i tìm ki?m", "?i?n tên mu?n tìm");

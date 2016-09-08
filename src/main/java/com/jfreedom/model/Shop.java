@@ -2,13 +2,15 @@ package com.jfreedom.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.*;
 
 
 @Entity
-/*@NamedQuery(name = "Shop.searchname", query = "SELECT p FROM Shop p WHERE LOWER(p.name) = LOWER(?1)")*/
+
 @Table(name ="tb_shop")
+@NamedQuery(name = "Shop.findAllShop", query = "SELECT s FROM Shop s ")
 public class Shop implements Serializable{
 	
 	@Id
@@ -24,6 +26,13 @@ public class Shop implements Serializable{
 	private String email;
 	@Column(name = "date")
 	private Date date;
+
+	@OneToMany(cascade =CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "shop")
+	private List<Custommer> listcustommers;
+
+	public List<Custommer> getCustommers(){
+		return listcustommers;
+	}
 
 	public Date getDate() {
 		return date;

@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 
+import com.jfreedom.model.Custommer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
@@ -30,7 +31,7 @@ public class ShopServiceImpl implements ShopService{
 	}
 	public  Shop findOneId(){
 
-		return reponsitoryCustom.findOne(2);
+		return reponsitoryCustom.findOne(1);
 	}
 	/*public List<Shop> findAllArray(){
 		return  reponsitoryCustom.
@@ -91,6 +92,10 @@ public List<Shop> findByNameLike( String name){
 	public List<Shop> listAllShopByName(String name){
 		return reponsitoryCustom.listAllShopByName(name);
 	}
+	public List<Shop> findAllShop(){
+		return reponsitoryCustom.findAllShop();
+	}
+
 
 	
 }
