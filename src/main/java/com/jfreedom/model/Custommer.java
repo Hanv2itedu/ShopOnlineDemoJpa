@@ -2,6 +2,8 @@ package com.jfreedom.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Created by PC-PC on 9/8/2016.
@@ -22,6 +24,44 @@ public class Custommer implements Serializable {
     @ManyToOne
     @JoinColumn(name = "shopId")
     Shop shop;
+
+    @OneToOne(fetch = FetchType.EAGER,mappedBy = "custommer")
+    private Address add;
+    /*@ManyToMany(cascade =CascadeType.ALL,fetch = FetchType.EAGER,mappedBy = "custommerList")
+    List<Product> productList;*/
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "cusandpro",
+            joinColumns =         {@JoinColumn(name = "cusID")},
+            inverseJoinColumns = {@JoinColumn(name = "proID")})
+    private Set<Product> productSet;
+
+  /* *//* public List<Product> getProductList() {
+        return productList;
+    }
+
+    public void setProductList(List<Product> productList) {
+        this.productList = productList;
+    }*/
+
+public Set<Product> getProductSet() {
+        return productSet;
+    }
+
+    public void setProductSet(Set<Product> productSet) {
+        this.productSet = productSet;
+    }
+
+    /*@ManyToOne
+private CusAndPro cusAndPro;
+
+    public void setAdd(Address add) {
+        this.add = add;
+
+    }*/
+
+    public Address getAdd(){
+        return add;
+    }
 
     public Shop getShop() {
         return shop;

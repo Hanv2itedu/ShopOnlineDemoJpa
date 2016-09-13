@@ -23,13 +23,87 @@
 </head>
 <body>
 <form method="get" action="/searchByName">
-	<label>local</label><input type="text"  name="name">
+	<label>name</label><input type="text"  name="name">
+	<%--label>name</label></label><input type="text"  name="local">
+	<label>datefrom</label></label><input type="text"  name="date">
+		<label>dateto</label></label><input type="text"  name="date">--%>
+
+	<input type="submit" value="tim">
+</form
+<form method="get" action="/findByNameLike">
+	<label>name like </label><input type="text"  name="name">
 	<%--label>name</label></label><input type="text"  name="local">
 	<label>datefrom</label></label><input type="text"  name="date">
 		<label>dateto</label></label><input type="text"  name="date">--%>
 
 	<input type="submit" value="tim">
 </form>
+<form method="get" action="/findByNameContaining">
+	<label> Name containing  </label><input type="text"  name="name">
+	<%--label>name</label></label><input type="text"  name="local">
+	<label>datefrom</label></label><input type="text"  name="date">
+		<label>dateto</label></label><input type="text"  name="date">--%>
+
+	<input type="submit" value="tim">
+</form>
+<form method="get" action="/findByNameStartWith">
+	<label> Name startwith  </label><input type="text"  name="name">
+	<%--label>name</label></label><input type="text"  name="local">
+	<label>datefrom</label></label><input type="text"  name="date">
+		<label>dateto</label></label><input type="text"  name="date">--%>
+
+	<input type="submit" value="tim">
+</form>
+<form method="get" action="/findByNameEndWith">
+	<label> Name End  </label><input type="text"  name="name">
+	<input type="submit" value="tim">
+</form>
+<form method="get" action="/findByNameEngroCase">
+	<label> Name egnrocase  </label><input type="text"  name="name">
+	<%--label>name</label></label><input type="text"  name="local">
+	<label>datefrom</label></label><input type="text"  name="date">
+		<label>dateto</label></label><input type="text"  name="date">--%>
+
+	<input type="submit" value="tim">
+</form>
+<form method="get" action="/searchEmail">
+	<label> Email  </label><input type="text"  name="name">
+	<%--label>name</label></label><input type="text"  name="local">
+	<label>datefrom</label></label><input type="text"  name="date">
+		<label>dateto</label></label><input type="text"  name="date">--%>
+
+	<input type="submit" value="tim">
+</form>
+<form method="get" action="/nameandlocal">
+
+	<label>name</label></label><input type="text"  name="name">
+	<label>Local</label></label><input type="text"  name="local">
+
+
+	<input type="submit" value="tim">
+</form>
+<form method="get" action="/findBydateafter">
+	<label> Date After </label><input type="text"  name="date">
+
+
+	<input type="submit" value="tim">
+</form>
+<form method="get" action="/findBydateBefore">
+	<label> Date before </label><input type="text"  name="date">
+
+
+	<input type="submit" value="tim">
+</form>
+<form method="get" action="/findByDateBetween>
+
+
+	<label>datefrom</label></label><input type="text"  name="date">
+		<label>dateto</label></label><input type="text"  name="date">
+
+	<input type="submit" value="tim">
+</form>
+
+
 
 	<div class="container">
 		<table class="table table-hover " width="500px">

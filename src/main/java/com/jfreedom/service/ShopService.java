@@ -3,6 +3,7 @@ package com.jfreedom.service;
 import java.util.Date;
 import java.util.List;
 
+import com.jfreedom.model.Custommer;
 import com.jfreedom.model.Shop;
 import org.springframework.data.repository.query.Param;
 
@@ -17,7 +18,7 @@ public interface ShopService {
 	List<Shop> findByNameStartingWith(String name);
 	List<Shop> findByNameEndingWith(String name);
 	List<Shop> findByNameEgnoreCase(String name);
-	/*List<Shop> findByEmail(String email);*/
+	List<Shop> findByEmail(String email);
 	List<Shop> findByNameAndLocal(String name,String local);
 	List<Shop> findByNameOrLocal(String name,String local);
 	List<Shop> findByNameNot(String name);
@@ -27,6 +28,7 @@ public interface ShopService {
 	 List<Shop> listAllShop();
 	List<Shop> listAllShopByName(String name);
 	List<Shop> findAllShop();
+
 
 
 }

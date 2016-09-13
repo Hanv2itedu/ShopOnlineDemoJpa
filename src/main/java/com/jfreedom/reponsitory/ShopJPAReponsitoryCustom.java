@@ -17,8 +17,8 @@ public interface ShopJPAReponsitoryCustom extends JpaRepository<Shop, Integer>{
     List<Shop> findByNameStartingWith(String name);
     List<Shop> findByNameEndingWith(String name);
     List<Shop> findByNameIgnoreCase(String name);
-    /*@Query("select u from Shop u where u.email = ?1")
-    List<Shop> findByEmail(String email);*/
+
+    List<Shop> findByEmail(String email);
     List<Shop> findByNameAndLocal(String name,String local);
     List<Shop> findByNameOrLocal(String name,String local);
     List<Shop> findByNameNot(String name);

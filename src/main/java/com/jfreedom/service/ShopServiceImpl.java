@@ -5,6 +5,7 @@ import java.util.List;
 
 
 import com.jfreedom.model.Custommer;
+import com.jfreedom.reponsitory.CustomerJPAReponsitory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
@@ -22,6 +23,7 @@ public class ShopServiceImpl implements ShopService{
 	@Autowired
 	//ShopDAO dao;
 	ShopJPAReponsitoryCustom reponsitoryCustom;
+
 	
 	
 	public List<Shop> getAllShops() {
@@ -62,9 +64,9 @@ public List<Shop> findByNameLike( String name){
 
 		return reponsitoryCustom.findByNameIgnoreCase(name);
 	}
-	/*public List<Shop> findByEmail(String email){
+	public List<Shop> findByEmail(String email){
 		return reponsitoryCustom.findByEmail(email);
-	}*/
+	}
 	public List<Shop> findByNameAndLocal(String name,String local){
 	return reponsitoryCustom.findByNameAndLocal(name, local);
 	}
@@ -74,6 +76,7 @@ public List<Shop> findByNameLike( String name){
 	public List<Shop> findByNameNot(String name){
 		return reponsitoryCustom.findByNameNot(name);
 	}
+
 	public List<Shop> findByDateAfter(Date date){
 
 		return  reponsitoryCustom.findByDateAfter(date);
@@ -95,6 +98,7 @@ public List<Shop> findByNameLike( String name){
 	public List<Shop> findAllShop(){
 		return reponsitoryCustom.findAllShop();
 	}
+
 
 
 	
